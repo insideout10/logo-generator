@@ -1,4 +1,4 @@
-![InSideOut10 logo](https://github.com/insideout10/InSideOut10-Logo/raw/master/images/logo-0018.png)
+![InSideOut10 logo](https://github.com/insideout10/logo-generator/raw/master/images/logo-0018.png)
 
 
 ## InSideOut10 Logo Generator - Overview
