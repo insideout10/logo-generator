@@ -13,7 +13,7 @@ Follow our **Tumblr** to know more about us: [http://insideout10.tumblr.com/](ht
 
 ### Requirements
 
-Developed on Processing 1.0 (revision 0162) and tested on Processing 1.5 and above.
+Requires processing 2.0 or later.
 
 ### How to use it
 
