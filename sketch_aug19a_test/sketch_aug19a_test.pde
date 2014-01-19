@@ -1,9 +1,11 @@
+import java.util.Arrays;
+
 // public variables
 
-int z = 40; // font size (available also 20, 24, 40, 50)  
+int z = 240; // font size (available also 20, 24, 40, 50)  
+int x = int(z * 7.3); // horizontal spacing - length of the full string
+int y = z; // vertical spacing
 
-int x = int(z*7.3); // horizontal spacing - lenght of the full string
-int y= z; // vertical spacing
 int intMargin = 4; // define bounding box vertical margin 
 
 int h;  // text width
@@ -14,30 +16,33 @@ void setup()
 {
   
    //size(screenWidth, screenHeight); // full screen 
-  size(screenWidth/2, screenHeight/2); // test screen 
+  size(1752, 240); // test screen 
   // size(235, 43); // one and only
   
   frameRate(2);
   
-  //noLoop(); // Only draw once
-  
    b = loadImage("logo-000NEW.png"); //loading the splash screen
-
    b.resize(width, height); // resizing image to the width and height values
    
    background(b); // displaying splash screen as background
   
+  println("Setup completed");
 }
 
 void draw() {
     
+    println("draw: drawing background.");
     background(255,255,255);
     
     int x_;
     int y_;
   
-    for (int f = 0; f < width/x; f = f+1) {
-     for (int i = 0; i < height/y; i = i+1) {
+    println("draw: [ width :: " + width + " ][ height :: " + height + " ][ x :: " + x + " ][ y :: " + y + " ]");
+  
+    for (int f = 0; f < width/x; f++) {
+      println("draw: [ f :: " + f + " ]");
+
+     for (int i = 0; i < height/y; i++) {
       
       if (f == 0){
         x_ = 1;
@@ -55,6 +60,7 @@ void draw() {
         /// IN  ///
         ///////////  
         
+        println("draw: choosing random font.");
         chooseRandomFont();      
 
         int num0 = int(random(0, 3));
@@ -209,17 +215,17 @@ void chooseRandomFont() {
    
    String k = str(z);
    
-   String[] fonts = new String[8];
-   fonts[0] = "TwCenMT-Bold-" + k + ".vlw";
-   fonts[1] = "Calibri-Bold-" + k + ".vlw";
-   fonts[2] = "Rockwell-ExtraBold-" + k + ".vlw";
-   fonts[3] = "ACaslonPro-Semibold-" + k + ".vlw";
-   fonts[4] = "AGaramondPro-Bold-" + k + ".vlw";
-   fonts[5] = "AmericanTypewriter-Bold-" + k + ".vlw";
-   fonts[6] = "Ayuthaya-" + k + ".vlw";
-   fonts[7] = "TamilMN-Bold-" + k + ".vlw";
+   String[] fonts = new String[] {};
+//   fonts[0] = "TwCenMT-Bold-" + k + ".vlw";
+//   fonts[1] = "Calibri-Bold-" + k + ".vlw";
+//   fonts[2] = "Rockwell-ExtraBold-" + k + ".vlw";
+   fonts = append(fonts, "ACaslonPro-Semibold-" + k + ".vlw");
+   fonts = append(fonts, "AGaramondPro-Bold-" + k + ".vlw");
+   fonts = append(fonts, "AmericanTypewriter-Bold-" + k + ".vlw");
+   fonts = append(fonts, "Ayuthaya-" + k + ".vlw");
+   fonts = append(fonts, "TamilMN-Bold-" + k + ".vlw");
   
-   float b = random(7);
+   float b = random(fonts.length);
    int c = int(b);
    fontA = loadFont(fonts[c]);
    textFont(fontA, z);
@@ -228,7 +234,7 @@ void chooseRandomFont() {
 
 void mousePressed() 
 {
-     saveFrame("logo-####.png"); 
+     saveFrame("logo-####.tif"); 
 }
 
 
