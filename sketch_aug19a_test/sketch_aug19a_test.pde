@@ -6,7 +6,7 @@ int z = 240; // font size (available also 20, 24, 40, 50)
 int x = int(z * 7.3); // horizontal spacing - length of the full string
 int y = z; // vertical spacing
 
-int intMargin = 4; // define bounding box vertical margin 
+int intMargin = 40; // define bounding box vertical margin 
 
 int h;  // text width
 
@@ -16,7 +16,7 @@ void setup()
 {
   
    //size(screenWidth, screenHeight); // full screen 
-  size(1752, 240); // test screen 
+  size(1752, 280); // test screen 
   // size(235, 43); // one and only
   
   frameRate(2);
@@ -150,7 +150,7 @@ void draw() {
         chooseRandomFont();
         chooseRandomColor_write("0", h, y_);
         
-
+        saveFrame("logo-####.tif");
     }
 }
 }
@@ -169,7 +169,7 @@ void chooseRandomColor_write(String sText, int xP, int yP) {
   // coloring the bounding box using a random color from the palette
   colorlistRect = chooseRandomColor();
   fill(colorlistRect[0],colorlistRect[1],colorlistRect[2]); 
-  rect(xP,yP-y+intMargin,h,yP+intMargin);
+  rect(xP,yP-y,h,yP+intMargin);
   
    
   // choosing a random color from the palette for the text
@@ -179,7 +179,7 @@ void chooseRandomColor_write(String sText, int xP, int yP) {
   while (Arrays.equals(colorlistText,colorlistRect)) { 
       colorlistText = chooseRandomColor();    }
   fill(colorlistText[0],colorlistText[1],colorlistText[2]);
-  text(sText, xP, yP);
+  text(sText, xP, yP - (intMargin/2));
   } 
 
   // random color generator
