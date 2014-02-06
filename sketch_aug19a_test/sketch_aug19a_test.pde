@@ -185,7 +185,7 @@ void chooseRandomColor_write(String sText, int xP, int yP) {
   // random color generator
   int[] chooseRandomColor() {
   
-  String[] colors = new String[8];
+  String[] colors = new String[7];
   
   // color palette - change here to try different palette
   colors[0] = "242,15,98";
@@ -195,9 +195,8 @@ void chooseRandomColor_write(String sText, int xP, int yP) {
   colors[4] = "100,41,148";
   colors[5] = "255,255,255";
   colors[6] = "25,24,24";
-  colors[7] = "25,24,24";  
-  
-  float q = random(7);
+ 
+  float q = random(6);
   int c = int(q);
   String[] colorlist = split(colors[c], ','); 
   int[] colorlist_ = int(colorlist);
