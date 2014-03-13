@@ -8,7 +8,7 @@ Welcome to **InSideOut10 Logo Generator**, a simple sketch developed with [Proce
 
 ### Announcements
 
-Follow our **Tumblr** to know more about us: [http://insideout10.tumblr.com/](http://insideout10.tumblr.com/).
+Follow our **Tumblr** to know more about us: [http://blog.insideout.io/](http://blog.insideout.io/).
 
 
 ### Requirements
